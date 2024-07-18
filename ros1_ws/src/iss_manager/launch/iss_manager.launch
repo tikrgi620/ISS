@@ -2,5 +2,13 @@
 
     <node pkg="iss_manager" type="planning_manager_node.py" name="planning_manager_node" output="screen"/>
     <node pkg="iss_manager" type="control_manager_node.py" name="control_manager_node" output="screen"/>
+    <node 
+        pkg="iss_manager" 
+        type="bag_recorder.py" 
+        name="bag_recorder" 
+        output="screen" 
+        launch-prefix="bash -c 'sleep 5; $0 $@'"
+        args="-O /home/as3r/ADSs/ISS/Recordings/ -a"
+    />
 
 </launch>
